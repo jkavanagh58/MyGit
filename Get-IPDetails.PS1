@@ -6,9 +6,11 @@ param (
     [string[]]$ComputerName = $env:computername            
 )                        
             
-begin {}            
-process {            
+begin {
  $Report = @()
+}            
+process {            
+ 
  foreach ($Computer in $ComputerName) {            
   if(Test-Connection -ComputerName $Computer -Count 1 -ea 0) {            
    try {            
