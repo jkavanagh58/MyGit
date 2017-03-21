@@ -18,6 +18,8 @@ process {
         Continue            
    }            
    foreach ($Network in $Networks) {            
+        # Added this to not run on nics with not Gateway.  Several servers do this on backup network
+        # need to figure out how to find the major production nic
         If ($Network.DefaultIPGateway -ne $null) {
             $IPAddress  = $Network.IpAddress[0]            
             $SubnetMask  = $Network.IPSubnet[0]            
