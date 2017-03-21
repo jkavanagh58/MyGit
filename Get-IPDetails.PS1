@@ -6,7 +6,9 @@ param (
     [string[]]$ComputerName = $env:computername            
 )                        
             
-begin {}            
+begin {
+ $Report = @()  # Array to collect data and produce cumulative report
+}            
 process {            
  $Report = @()
  foreach ($Computer in $ComputerName) {            
