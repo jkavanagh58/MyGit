@@ -1,0 +1,21 @@
+<AutomatedInstallation langpack="eng">
+    <target.product>Control-M/Agent 9.0.00</target.product>
+    <instance>
+        <entry key="field.Instance.Name" value="Default"/>
+    </instance>
+    <agent.parameters>
+        <entry key="ctm_agent.Domain" value=""/>
+        <entry key="ctm_agent.Tracker.Event.Port" value="7035"/>
+        <entry key="field.Agent.To.Server.Port.Number" value="7005"/>
+        <entry key="ctm_agent.Tcp_ip.Timeout" value="60"/>
+        <entry key="INSTALL_PATH" value="C:\Program Files\BMC Software"/>
+        <entry key="ctm_agent.Service.User.Name" value=""/>
+        <entry key="field.Authorized.Controlm.Server.Host" value="ctrlm9cert.wfm.wegmans.com|blx3025.wfm.wegmans.com"/>
+        <entry key="ctm_agent.Logon.As.User" value="N"/>
+        <entry key="field.Server.To.Agent.Port.Number" value="7006"/>
+        <entry key="ctm_agent.Default.Printer" value=""/>
+        <entry key="ctm_agent.JO.Statistic" value=""/>
+        <entry key="ctm_agent.Service.User.Password" value="!!!BrQKaDUAV8o="/>
+        <entry key="field.Primary.Controlm.Server.Host" value="ctrlm9cert.wfm.wegmans.com"/>
+    </agent.parameters>
+</AutomatedInstallation>

@@ -1,0 +1,437 @@
+{
+    "PS Custom Object": {
+        "prefix": "customobj",
+        "body": [
+            "$$obj = [pscustomobject]@{",
+            "\t$FieldName = $FieldValue\r",
+            "}"
+        ],
+        "description": "Skeleton for adding a PowerShell Custom Object"
+    },
+    "Do...while loop": {
+        "prefix": "do",
+        "body": [
+            "do {",
+            "\t$0",
+            "} while (${$variable});"
+        ],
+        "description": "Do...while loop"
+    },
+    "Do...until loop": {
+        "prefix": "do",
+        "body": [
+            "do {",
+            "\t$0",
+            "} until (${$variable});"
+        ],
+        "description": "Do...until loop"
+    },
+    "Switch statement": {
+        "prefix": "switch",
+        "body": [
+            "switch (${$variable}) {",
+            "\t${condition} { ${action}; break }",
+            "\tDefault {}",
+            "}"
+        ],
+        "description": "Switch statement"
+    },
+    "Try catch": {
+        "prefix": "try",
+        "body": [
+            "try {",
+            "\t# Process to run\r",
+            "\t${1:code}\r",
+            "}",
+            "catch  {\r",
+            "\t# Handle the failure\r",
+            "\t${2:error}",
+            "}"
+        ],
+        "description": "Try catch statement"
+    },
+    "Try catch finally": {
+        "prefix": "trycf",
+        "body": [
+            "try {",
+            "\t# Process to run\r",
+            "\t${1:code}\r",
+            "}",
+            "catch  {\r",
+            "\t# Handle the failure\r",
+            "\t${2:error}",
+            "}\r",
+            "finally  {\r",
+            "\t# Finalize try statement\r",
+            "\t${3:finally}",
+            "}"
+        ],
+        "description": "Try catch finally statement"
+    },
+    "Try finallly": {
+        "prefix": "tryf",
+        "body": [
+            "try {",
+            "\t${_}",
+            "}",
+            "finally {",
+            "\t$0",
+            "}"
+        ],
+        "description": "Try finally"
+    },
+    "While loop": {
+        "prefix": "while",
+        "body": [
+            "while (${$variable}) {",
+            "\t$0",
+            "}"
+        ],
+        "description": "While loop"
+    },
+    "Function advanced": {
+        "prefix": "funcadv",
+        "body": [
+            "<#",
+            ".SYNOPSIS\r",
+            "\tShort description\r",
+            ".DESCRIPTION\r",
+            "\tLong description\r",
+            ".EXAMPLE\r",
+            "\tExample of how to use this cmdlet\r",
+            ".EXAMPLE\r",
+            "\tAnother example of how to use this cmdlet\r",
+            "#>\r",
+            "Function ${1:Verb}-${2:Noun} {\r",
+            "\t[CmdletBinding()]\r",
+            "\tparam(\r",
+            "\t\t[Parameter(Mandatory=$$true)]\r",
+            "\t\t[${ParameterType}]$${3:ParameterName}\r",
+            "\t)\r",
+            "\t\r",
+            "\tBEGIN {\r",
+            "\t\t${4:CodeHere}\r",
+            "\t}\r",
+            "\tPROCESS {",
+            "\t\t${5:CodeHere}\r",
+            "\t}\r",
+            "\tEND {",
+            "\t\t${6:CodeHere}\r",
+            "\t}\r"
+        ],
+        "description": "Advanced function"
+    },
+    "Comment Based Help": {
+        "prefix": "Wegmans - Help",
+        "body": [
+            "<#",
+            ".SYNOPSIS",
+            "\tShort description",
+            ".DESCRIPTION",
+            "\tLong description",
+            ".PARAMETER Path",
+            "\tSpecifies a path to one or more locations.",
+            ".EXAMPLE",
+            "\tC:\\PS>",
+            "\tExample of how to use this cmdlet",
+            ".EXAMPLE",
+            "\tC:\\PS>",
+            "\tAnother example of how to use this cmdlet",
+            ".INPUTS",
+            "\tInputs to this cmdlet (if any)",
+            ".OUTPUTS",
+            "\tOutput from this cmdlet (if any)",
+            ".NOTES",
+            "\t===========================================================================\r",
+            "\tCreated with:\tVisual Studio Code\r",
+            "\tCreated on:\t\t$datecreated\r",
+            "\tCreated by:\t\t$yourname\r",
+            "\tOrganization:\tWegmans\r",
+            "\tFilename:\t\t$TM_FILENAME\r",
+            "\t===========================================================================\r",
+            "\t$date $initials: Enter first comment here\r",
+            "#>\r"
+        ],
+        "description": "Help comment block - Customized for Wegmans"
+    },
+    "My Comment Based Help": {
+        "prefix": "jjk - Help",
+        "body": [
+            "<#",
+            ".SYNOPSIS",
+            "\tShort description",
+            ".DESCRIPTION",
+            "\tLong description",
+            ".PARAMETER Path",
+            "\tSpecifies a path to one or more locations.",
+            ".PARAMETER LiteralPath",
+            "\tSpecifies a path to one or more locations. Unlike Path, the value of LiteralPath is used exactly as it",
+            "\tis typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose",
+            "\tit in single quotation marks. Single quotation marks tell Windows PowerShell not to interpret any",
+            "\tcharacters as escape sequences.",
+            ".PARAMETER InputObject",
+            "\tSpecifies the object to be processed.  You can also pipe the objects to this command.",
+            ".EXAMPLE",
+            "\tC:\\PS>",
+            "\tExample of how to use this cmdlet",
+            ".EXAMPLE",
+            "\tC:\\PS>",
+            "\tAnother example of how to use this cmdlet",
+            ".INPUTS",
+            "\tInputs to this cmdlet (if any)",
+            ".OUTPUTS",
+            "\tOutput from this cmdlet (if any)",
+            ".NOTES",
+            "\t===========================================================================\r",
+            "\tCreated with:\tVisual Studio Code\r",
+            "\tCreated on:\t\t$datecreated\r",
+            "\tCreated by:\t\tKavanagh, John J.\r",
+            "\tOrganization:\tTEKSystems\r",
+            "\tFilename:\t\t$TM_FILENAME\r",
+            "\t===========================================================================\r",
+            "\t$date $initials: Enter first comment here\r",
+            "#>\r"
+        ],
+        "description": "Help comment block - Customized for Wegmans"
+    },
+    "CmdletBinding - Supports Whatif": {
+        "prefix": "cmdletbinding",
+        "body": [
+            "[CmdletBinding(SupportsShouldProcess=$$true,ConfirmImpact='Medium')]\r",
+            "Param(\r",
+            "\t\r",
+            ")\r"
+        ],
+        "description": "Cmdletbinding with support for whatif"
+    },
+    "Standard Logging": {
+        "prefix": "addlog",
+        "body": [
+            "Function write-logevent {\r",
+            "Param(\r",
+            "\t[String]$$script:Logfile = 'c:\\etc\\testlog.txt',\r",
+            "\t[String]$$logText,\r",
+            "\t[String]$$logTime = (get-date -UFormat %m%d%Y%H%M%S)\r",
+            ")\r",
+            "'{0}:{1}' -f $$logTime, $$logText | out-file $$script:logfile -Append\r",
+            "} #End write-logevent\r"
+        ],
+        "description": "Need to develop a standard logging function/method"
+    },
+    "Send Mail Message": {
+        "prefix": "mailsnippet",
+        "body": [
+            "$$mailparams = @{\r",
+            "\tTo          = \"$toaddress\"\r",
+            "\tFrom        = \"$fromaddress\"\r",
+            "\tSubject     = \"$mailsubject\"\r",
+            "\tBody        = \"$mailmessage\"\r",
+            "\tbodyAsHTML  = \\$$True\r",
+            "\tSMTPServer  = \"smtp.somedoamin.com\"\r",
+            "\tErrorAction = \"Stop\"\r",
+            "}\r",
+            "Try {\r",
+            "\tsend-mailmessage @mailparams\r",
+            "}\r",
+            "Catch {\r",
+            "\t\"Unable to send message\"\r",
+            "\t\"Reason: {0}:\" -f $$error[0].exception.message\r",
+            "}"
+        ],
+        "description": "Splatted send mail message"
+    },
+    "General Splat": {
+        "prefix": "splatsnippet",
+        "body": [
+            "$${1:varname} = @{\r",
+            "\t${2:Field} = ${3:fieldval}",
+            "}"
+        ],
+        "description": "General Splatting Structure"
+    },
+    "Initiate Garbage Collection": {
+        "prefix": "freememory",
+        "body": [
+            "Remove-Variable -Name ${1:variablestoberemoved}\r",
+            "[System.GC]::Collect()\r",
+            "$0"
+        ],
+        "description": "Free up memory when script completes"
+    },
+    "Count Files in Folder and Subfolders": {
+        "prefix": "filecount",
+        "body": [
+            "${1:\\$$paramName} = (Get-ChildItem -Path ${2:ProvideAPath} | Measure-Object).Count\r"
+        ],
+        "description": "Performs a count on all files in a folder, including subfolders"
+    },
+    "LogFile Compact Mil DTG": {
+        "prefix": "mildtg",
+        "body": [
+            "Get-Date -UFormat '%d%H%MR%b%y'"
+        ],
+        "description": "Uses Get-Date with UFormat to specify Military DTG"
+    },
+    "Add Verbose in Begin block": {
+        "prefix": "verbBEGIN",
+        "body": [
+            "Write-Verbose -Message \"[BEGIN]${1:Message}\""
+        ],
+        "description": "Add verbose messaging for activity in the BEGIN block"
+    },
+    "Add Verbose in Process block": {
+        "prefix": "verbPROCESS",
+        "body": [
+            "Write-Verbose -Message \"[PROCESS]${1:Message}\""
+        ],
+        "description": "Add verbose messaging for activity in the PROCESS block"
+    },
+    "Add Verbose in END": {
+        "prefix": "verbEND",
+        "body": [
+            "Write-Verbose -Message \"[END]${1:Message}\""
+        ],
+        "description": "Add verbose messaging for activity in the END section"
+    },
+    "Add Error Message": {
+        "prefix": "errMessage",
+        "body": [
+            "Write-Error -Message \"${1:Message}\""
+        ],
+        "description": "Add verbose messaging for activity in the BEGIN section"
+    },
+    "Parameter Statement": {
+        "prefix": "paramStatement",
+        "body": [
+            "[parameter(Mandatory=$${1|True,False|}, ValueFromPipeline=${2|$True,$False|},\r",
+            "\t\tHelpMessage = \"${3:HelpMessage}\")]\r",
+            "[${4:VariableType}]$${5:VariableName}"
+        ],
+        "description": "Scaffold for Parameter creation"
+    },
+    "Parameter Statement Validate Script": {
+        "prefix": "paramValidateScript",
+        "body": [
+            "[parameter(Mandatory=$${1|True,False|}, ValueFromPipeline=${2|$True,$False|},\r",
+            "\tHelpMessage = \"${3:HelpMessage}\")]\r",
+            "\t[ValidateScript({ ${4:ValidationScript} })]\r",
+            "[${5:VariableType}]$${6:VariableName}"
+        ],
+        "description": "Parameter with Validation Script"
+    },
+    "Switch Parameter Statement": {
+        "prefix": "paramSwitchStatement",
+        "body": [
+            "[parameter(Mandatory=$${1|True,False|}, ValueFromPipeline=${2|$True,$False|},\r",
+            "\t\tHelpMessage = \"${3:HelpMessage}\")]\r",
+            "[Switch]$${4:VariableName}"
+        ],
+        "description": "Scaffold for Switch Parameter creation"
+    },
+    "Parameter with Credential type": {
+        "prefix": "paramCredential",
+        "body": [
+            "[parameter(Mandatory=$${1|True,False|}, ValueFromPipeline=${2|$True,$False|},\r",
+            "\t\tHelpMessage = \"${3:HelpMessage}\")]\r",
+            "[System.Management.Automation.PSCredential]$${4:VariableName}"
+        ],
+        "description": "Parameter statement for accepting a Credential Object"
+    },
+    "Parameter with ValidateSet Statement": {
+        "prefix": "paramvalidSet",
+        "body": [
+            "[parameter(Mandatory=$${1|True,False|}, ValueFromPipeline=${2|$True,$False|},\r",
+            "\t\tHelpMessage = \"${3:HelpMessage}\")]\r",
+            "\t[ValidateSet(${4:SetofValuestoVerify})]\r",
+            "[${5:VariableType}]$${6:VariableName}"
+        ],
+        "description": "Parameter Framework with ValidateSet"
+    },
+    "Create Array List": {
+        "prefix": "newarray",
+        "body": [
+            "$${1:ArrayName} = New-Object System.Collections.ArrayList\r"
+        ],
+        "description": "Creates a new array for data collect"
+    },
+    "Connect to Wegmans vSphere": {
+        "prefix": "wegviconnect",
+        "body": [
+            "If (!($$defaultViServer)){\r",
+            "\tConnect-VIserver $viServer -AllLinked | Out-Null\r",
+            "\t'You are now connected to {0} vSphere servers' -f $$defaultviservers.count\r",
+            "}\r"
+        ],
+        "description": "Simple connect PowerCLI to the Wegmans vSphere environment"
+    },
+    "Connect to SRM Server and establish SRM API": {
+        "prefix": "srmAPIConnect",
+        "body": [
+            "$srmConnection = Connect-SrmServer -Credential $$admcreds -RemoteCredential $$admcreds\r",
+            "$srmApi = $srmConnection.ExtensionData\r"
+        ],
+        "description": "With an active viServer connection, connect to SRM Host and establish API context"
+    },
+    "VSphere Credential Object": {
+        "prefix": "paramvicred",
+        "body": [
+            "[parameter(Mandatory=$False, ValueFromPipeline=$True,\r",
+            "\tHelpMessage = 'Supply elevated credentials for VSphere connection')]\r",
+            "[System.Management.Automation.PSCredential]\\$viCreds"
+        ],
+        "description": "Establish a Parameter object for vSphere credentials with appropriate Type"
+    },
+    "VSphere Credentials": {
+        "prefix": "vicreds",
+        "body": [
+            "Write-Verbose -Message '[BEGIN]Checking for Credentials'\r",
+            "If (!(\\$viCreds)){\r",
+            "\tWrite-Verbose -Message '[BEGIN]Prompting for Credentials'\r",
+            "\t\\$viCreds = Get-Credential -Message 'Enter your Elevated account credentials'\r",
+            "}\r",
+            "Try {\r",
+            "\tWrite-Verbose -Message '[BEGIN]Connecting to vCenter \\$(\\$viServer)'\r",
+            "\t# Standard VSphere and SRM connection\r",
+            "\tConnect-VIserver \\$viServer -AllLinked -credential \\$viCreds -ErrorAction Stop | Out-Null\r",
+            "}\r",
+            "Catch {\r",
+            "\tWrite-Error -Message 'Unable to connect to viServer'\r",
+            "\t\\$Error[0].Exception.Message\r",
+            "}\r"
+        ],
+        "description": "vSphere credential object standard"
+    },
+    "Custom Block Comment": {
+        "prefix": "commentblock",
+        "body": [
+            "$BLOCK_COMMENT_START\r",
+            "\t${1:Enter your comment here}\r",
+            "$BLOCK_COMMENT_END"
+        ],
+        "description": "Create a comment block"
+    },
+    "Use VICredentialStoreItem": {
+        "prefix": "usevicred",
+        "body": [
+            "\\$credFile = ${1:Location of VI Cred Store}\r",
+            "\\$viCreds = Get-VICredentialStoreItem -Path \\$credFile"
+        ],
+        "description": "Point to a VI Credential Store File"
+    },
+    "Pester - Minimal": {
+        "prefix": "pestermin",
+        "body": [
+            "Describe '${Description}' {\r",
+            "\t\r",
+            "}"
+        ],
+        "Description": "Basic Pester Test"
+    },
+    "Build Array": {
+        "prefix": "arrayBuild",
+        "body": [
+            "$${1:Variable Name} = [System.Collections.ArrayList]@()\r"
+        ],
+        "description": "Create a true array"
+    }
+}

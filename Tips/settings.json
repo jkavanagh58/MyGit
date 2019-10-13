@@ -1,0 +1,118 @@
+{
+    "powershell.helpCompletion": "Disabled",
+    "powershell.enableProfileLoading": true,
+    "powershell.integratedConsole.focusConsoleOnExecute": true,
+    "powershell.codeFormatting.preset": "Stroustrup",
+    "powershell.scriptAnalysis.settingsPath": "C:\\etc\\PSScriptAnalyzerSettings.psd1",
+    "powershell.codeFormatting.newLineAfterCloseBrace": true,
+    "breadcrumbs.enabled": false,
+    "editor.fontFamily": "'Fira Code iScript'",
+    "editor.fontSize": 16,
+    "editor.cursorStyle": "block",
+    "editor.minimap.enabled": false,
+    "extensions.autoUpdate": false,
+    "files.defaultLanguage": "powershell",
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "window.openFilesInNewWindow": "on",
+    "markdown.showToolbar": false,
+    "debug.toolBarLocation": "docked",
+    "workbench.colorTheme": "Blackboard",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.fontFamily": "monospace",
+    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.cursorStyle": "underline",
+    "shareCode.github.username": "john.kavanagh@outlook.com",
+    "shareCode.github.authtoken": "7347caf9e205845a5d1c3a75cc95eef78097d2e2",
+    "team.showWelcomeMessage": false,
+    "window.titleBarStyle": "custom",
+    "editor.tabCompletion": "on",
+    "printcode.paperSize": "legalLand",
+    "printcode.tabSize": 4,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "text.html.markdown.journal.task.open.bullet",
+                "settings": {
+                    "foreground": "#FFFF00"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.task.open.marker",
+                "settings": {
+                    "foreground": "#FFFF00"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.task.open.keyword",
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.task.open.text",
+                "settings": {}
+            },
+            {
+                "scope": "text.html.markdown.journal.task.completed.keyword",
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.task.completed.marker",
+                "settings": {
+                    "fontStyle": "bold underline"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.task.completed.text",
+                "settings": {
+                    "foreground": "#AAAAAA"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.task.completed.bullet",
+                "settings": {
+                    "foreground": "#FFFF00"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.memo.keyword",
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.memo.bullet",
+                "settings": {
+                    "foreground": "#FFFF00"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.scope",
+                "settings": {
+                    "foreground": "#FFFF00"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.link.keyword",
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": "text.html.markdown.journal.link.bullet",
+                "settings": {
+                    "foreground": "#FFFF00"
+                }
+            }
+        ]
+    },
+    "editor.fontLigatures": true,
+    "powershell.powerShellExePath": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "markdownlint.customRules": [
+        "{docsmsft.docs-markdown}/markdownlint-custom-rules/rules.js"
+    ]
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<style type="text/css">
+		h1{
+			Color: Red;
+			Font-Family: Arial;
+			Font-Size: 16pt;
+			font-weight: bolder;
+			Align: Center;
+			display: Block;
+		}
+		body {
+			background-color: rgb(194, 180, 180);
+			color: black;
+			font-family: monospace;
+			margin: 8px;
+		}
+		table {
+			width: 100%;
+		}
+		code {
+			background-color: darkBlue;
+			color: yellow;
+		}
+	</style>
+<body>
+<h1 id="-maintenance-mode-scheduler-"><strong>Maintenance Mode Scheduler</strong></h1>
+<p>Script to start Maintenance Mode for Server OS Patching.</p>
+<h2 id="tasks">Tasks</h2>
+<p>Read SCOM Groups related to patching
+Based on name determine Maintenance Mode start time, use standard duration, enter SecuriyIssue as Reason</p>
+<pre><code>1. Extract start and stop time from SCOM Group Name (&#39;[0-1][0-9]:[0-5][0-9](a|p)m&#39;)
+</code></pre><h2 id="notes">Notes</h2>
+<p>07.14.2017:    Test run with initial script</p>
+<pre><code>get-scomclassinstance -DisplayName $testgroup |get-scommaintenancemode | select *
+
+ MonitoringObjectId : e6ceddfc-a538-73bd-f1bc-40d366e6e1d1
+ StartTime          : 7/14/2017 7:43:07 PM
+ ScheduledEndTime   : 7/14/2017 8:28:07 PM
+ EndTime            :
+ Reason             : SecurityIssue
+ Comments           : Testing scripted process for starting Maintenance Mode for Security Patching
+ User               : WEGMANS\TechAdminJXK
+ LastModified       : 7/14/2017 7:43:07 PM
+ ManagementGroup    : PRD_OM12R2
+ ManagementGroupId  : 4aabdd25-45d3-6393-35be-73355cec2345
+</code></pre><p>07.14.2017: Modify parameter definitions, need to add verify process</p>
+<p>07.17.2017: Issue with Groups</p>
+<ul>
+<li>Check WFM - Windows-Svr-MW - Production - 2.Tuesday 08:00pm-<strong>010</strong>:00pm</li>
+<li>Check WFM - Windows-Svr-MW - Production - 2.Tuesday 08:00pm-<strong>010</strong>:00pm OMS Orchestrator</li>
+</ul>
+<p>08.01.2017: Working on email notification</p>
+<p>08.20.2017: SCOM 2012R2 does not provide means to future schedule MaintenanceMode. Alternate method to work on is using the existing Scheduled Tasks. For each patch group, find associated scheduled task and enable it.</p>
+<code>$taskCIM = new-cimsession -Computer "WFM-OM12-MSM-03.wfm.wegmans.com"
+
+get-scheduledtask -CimSession $taskCIM -TaskName $groupObj.DisplayName |
+
+	enable-scheduledtask -cimsession $taskCIM</code>
+</body>

@@ -1,0 +1,9 @@
+Wegmans:
+  SCOM Blackout:
+    TODO:
+      ☐ ☐ # TODO: deal with windows that span days ...
+ @file:///C:/Users/vndTekJXK/Documents/GitHub/ServiceDelivery/BlackOutWindow/WegmansTODO.TODO#4
+      ☐ ☐ //TODO Finalize dataset
+ @file:///C:/Users/vndTekJXK/Documents/GitHub/ServiceDelivery/BlackOutWindow/WegmansTODO.TODO#9
+      ☐ # TODO: deal with windows that span days ...
+ @file:///C:/Users/vndTekJXK/Documents/GitHub/ServiceDelivery/BlackOutWindow/scratchpad-scheduler.ps1#27
