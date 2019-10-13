@@ -1,0 +1,1 @@
+﻿get-scomalert | ? {$_.Name -eq 'WMI is unhealthy'} | select MonitoringObjectDisplayName,Name, ResolutionState,TimeRaised,TimeResolved | sort TimeRaised | ft -auto
